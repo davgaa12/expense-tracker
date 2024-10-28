@@ -1,6 +1,6 @@
 "use client";
 import { Home } from "@/app/components/icons/Home";
-import { BiSolidChevronUp } from "react-icons/bi";
+import { BiSolidChevronUp, BiSquareRounded } from "react-icons/bi";
 import { BiSolidChevronDown } from "react-icons/bi";
 import React from "react";
 import { Bar, Doughnut } from "react-chartjs-2";
@@ -29,15 +29,24 @@ ChartJS.register(
 
 export const Dashboard = () => {
   // Bar графикийн өгөгдөл
+  // <canvas id="BarOptions" width="542px" height="162px"></canvas>
+  // const ctx = document.getElementById('BarOptions').getContext('2d');
   const barData = {
-    labels: ["January", "February", "March", "April", "May"],
+    labels: ["1", "2", "3", "4", "5", "6", "7"],
     datasets: [
       {
         label: "Sales",
-        data: [12, 19, 3, 5, 2],
-        backgroundColor: "rgba(75, 192, 192, 0.6)",
-        borderColor: "rgba(75, 192, 192, 1)",
-        borderWidth: 1,
+        data: [3000000,3000000,3000000,3000000,3000000,3000000,3000000,],
+        backgroundColor: "#84CC16",
+    
+        
+       
+      },
+      {
+        label: "Sas",
+        data: [2000000,2000000,2000000,2000000,2000000,2000000,2000000,],
+        backgroundColor: "#F97316",
+      
       },
     ],
   };
@@ -47,11 +56,10 @@ export const Dashboard = () => {
     responsive: true,
     plugins: {
       legend: {
-        position: "top",
+        position: "hidden",
       },
       title: {
         display: true,
-        text: "Bar Chart Example",
       },
     },
   };
@@ -83,7 +91,7 @@ export const Dashboard = () => {
     responsive: true,
     plugins: {
       legend: {
-        position: "top",
+        position: "right",
       },
       title: {
         display: true,
@@ -186,3 +194,4 @@ export const Dashboard = () => {
     </div>
   );
 };
+
